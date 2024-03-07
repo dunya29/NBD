@@ -3211,15 +3211,17 @@
         </div>
     </div>
     <script>
-        const consent = document.querySelector("#consent-users")
-        function toggleConsent() {
-            consent.classList.toggle("form-panel_shown");
-            document.body.classList.toggle('menu-open');
-        }
-        if (consent) {
-            toggleConsent()
-            consent.querySelector(".btn_primary").addEventListener("click",toggleConsent)
-        }
+        document.addEventListener('DOMContentLoaded', function (e) {
+            const consent = document.querySelector("#consent-users")
+            function toggleConsent() {
+                consent.classList.toggle("form-panel_shown");
+                document.body.classList.toggle('menu-open');
+            }
+            if (consent) {
+                setTimeout(toggleConsent, 5000);
+                consent.querySelector(".btn_primary").addEventListener("click",toggleConsent)
+            }
+        })
     </script>
     <!-- Vk Pixel Code -->
     <noscript><img src="https://vk.com/rtrg?p=VK-RTRG-511859-4tp22" style="position:fixed; left:-999px;"
